@@ -3,4 +3,5 @@
         <string name="translation_error">翻訳エラー</string>
         <string name="translation_error_with_code">翻訳エラー: %1$d</string>
         <string name="translation_error_with_message">翻訳エラー: %1$s</string>
+        <string name="example_text">Enter text to translate</string>
 </resources>

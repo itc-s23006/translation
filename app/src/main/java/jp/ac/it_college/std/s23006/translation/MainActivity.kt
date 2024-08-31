@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         translateButton.setOnClickListener {
             val text = inputText.text.toString()
-            val call = service.translate(text)
+            val call = service.translate(text, "en", "ja")
 
             call.enqueue(object : Callback<TranslationResponse> {
                 override fun onResponse(call: Call<TranslationResponse>, response: Response<TranslationResponse>) {

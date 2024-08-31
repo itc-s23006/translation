@@ -9,6 +9,6 @@ interface TranslationService {
     fun translate(
         @Query("q") text: String,
         @Query("source") sourceLang: String = "auto",
-        @Query("target") targetLang: String = "ja",
+        @Query("target") targetLang: String
     ): Call<TranslationResponse>
 }
