@@ -30,14 +30,14 @@ class MainActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<TranslationResponse>, response: Response<TranslationResponse>) {
                     if (response.isSuccessful) {
                         val translatedText = response.body()?.translatedText
-                        resultText.text = translatedText ?: "翻訳エラー"
+                        resultText.text = translatedText ?: getString(R.string.translation_error)
                     } else {
-                        resultText.text = "翻訳エラー: ${response.code()}"
+                        resultText.text = getString(R.string.translation_error_with_code, response.code())
                     }
                 }
 
                 override fun onFailure(call: Call<TranslationResponse>, t: Throwable) {
-                    resultText.text = "翻訳エラー: ${t.message}"
+                    resultText.text = getString(R.string.translation_error_with_message, t.message)
                 }
             })
         }
